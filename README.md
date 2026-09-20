@@ -1,3 +1,5 @@
+<p align="center"><img src="https://garda-studio.com/product-icons/daytandem.png" width="88" height="88" alt=""></p>
+
 # DayTandem
 
 **Your day, at a glance.**
