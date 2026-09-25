@@ -1,8 +1,10 @@
+<a href="https://garda-studio.com/products/daytandem">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
   <img src="assets/banner-light.svg" alt="DayTandem by Garda Studio" width="1280">
 </picture>
+</a>
 
 # DayTandem
 
