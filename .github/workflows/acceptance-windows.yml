@@ -1,0 +1,37 @@
+name: Windows installer acceptance (draft packages only)
+on:
+  workflow_dispatch:
+    inputs:
+      draft_tag:
+        description: Private draft acceptance tag
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  install:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        scope: [currentuser, allusers]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Download isolated test packages from draft (no source checkout)
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          DRAFT_TAG: ${{ inputs.draft_tag }}
+        run: |
+          if ($env:DRAFT_TAG -notmatch '^acceptance-[a-zA-Z0-9-]+$') { throw 'Invalid test tag' }
+          gh release view $env:DRAFT_TAG --json isDraft --jq '.isDraft' | Tee-Object -Variable isDraft
+          if ($isDraft -ne 'true') { throw 'Only draft packages may be tested' }
+          gh release download $env:DRAFT_TAG --pattern '*-setup.exe' --dir packages
+          if ($LASTEXITCODE -ne 0) { throw 'Package download failed' }
+      - name: Install N, upgrade N+1, retain data, uninstall
+        run: python scripts/acceptance-windows.py ${{ matrix.scope }}
