@@ -30,3 +30,4 @@ jobs:
       - run: node scripts/sync-release.mjs
         env:
           SITE_SYNC_SECRET: ${{ secrets.SITE_SYNC_SECRET }}
+          GITHUB_TOKEN: ${{ github.token }}
