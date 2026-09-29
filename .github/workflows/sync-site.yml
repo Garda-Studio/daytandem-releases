@@ -1,0 +1,32 @@
+# Copy to .github/workflows/sync-site.yml in each PUBLIC release-only repository.
+name: Synchronize studio release catalog
+on:
+  release:
+    types: [published, edited, deleted]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Stable tag (vX.Y.Z)
+        required: true
+        type: string
+      deleted:
+        description: Release was deleted
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: site-release-catalog
+  cancel-in-progress: false
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24.11.1'
+      - run: node scripts/sync-release.mjs
+        env:
+          SITE_SYNC_SECRET: ${{ secrets.SITE_SYNC_SECRET }}
