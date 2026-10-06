@@ -12,7 +12,7 @@
 
 By [Garda Studio](https://garda-studio.com).
 
-[Product page](https://garda-studio.com/products/daytandem) · [Releases](https://github.com/Garda-Studio/daytandem-releases/releases) · [Feedback](https://github.com/Garda-Studio/daytandem-releases/issues) · [Support](mailto:support@garda-studio.com)
+[Product page](https://garda-studio.com/products/daytandem) · [Microsoft Store](https://apps.microsoft.com/detail/9N7PVTJS2MHK) · [Releases](https://github.com/Garda-Studio/daytandem-releases/releases) · [Feedback](https://github.com/Garda-Studio/daytandem-releases/issues) · [Support](mailto:support@garda-studio.com)
 
 ## About
 
@@ -29,9 +29,14 @@ DayTandem is a local-first desktop planner with weekly schedules, a current-acti
 
 ## Downloads and installation
 
-This is the public product and release hub. **Application source code is private.** Public downloads do not grant an open-source license; consult the license included with each release.
+<a href="https://apps.microsoft.com/detail/9N7PVTJS2MHK"><img src="assets/microsoft-store-badge.svg" alt="Download from the Microsoft Store" width="161" height="44"></a>
 
-Installers and portable packages, when available, will be attached to Releases alongside installation instructions, changes, and known limitations. Do not use GitHub's automatically generated source archives as application installers.
+- **Microsoft Store (Windows 11):** install from the [Microsoft Store](https://apps.microsoft.com/detail/9N7PVTJS2MHK); updates arrive through the Store.
+- **Installer or portable build (Windows x64):** download from the [latest release](https://github.com/Garda-Studio/daytandem-releases/releases/latest). These builds update themselves from this repository after you confirm.
+
+The Store version keeps its data separately from the installer and portable builds; move data between them with JSON export and import.
+
+This is the public product and release hub. **Application source code is private.** Public downloads do not grant an open-source license; consult the license included with each release. Do not use GitHub's automatically generated source archives as application installers.
 
 ## Feedback and security
 
