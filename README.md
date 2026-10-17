@@ -8,10 +8,8 @@
 
 # DayTandem
 
-**Your day, at a glance.**
-
-By [Garda Studio](https://garda-studio.com).
-
+**Your day, at a glance**
+By [Garda Studio](https://garda-studio.com)
 [Product page](https://garda-studio.com/products/daytandem) · [Microsoft Store](https://apps.microsoft.com/detail/9N7PVTJS2MHK) · [Releases](https://github.com/Garda-Studio/daytandem-releases/releases) · [Feedback](https://github.com/Garda-Studio/daytandem-releases/issues) · [Support](mailto:support@garda-studio.com)
 
 ## About

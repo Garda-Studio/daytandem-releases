@@ -1,8 +1,6 @@
 # Copy to .github/workflows/sync-site.yml in each PUBLIC release-only repository.
 name: Synchronize studio release catalog
 on:
-  release:
-    types: [published, edited, deleted]
   workflow_dispatch:
     inputs:
       tag:
